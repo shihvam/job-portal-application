@@ -51,7 +51,8 @@ function OnBoard(){
   }
 
   function handleRecruiterFormValid(){
-    return  Object.keys(recruiterFormData).every(key => recruiterFormData[key].trim() !== '' );
+    
+    return  Object.keys(recruiterFormData).every( key => recruiterFormData[key].trim() !== '' );
   };
 
   

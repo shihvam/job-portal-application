@@ -59,7 +59,7 @@ function Header({user, profileInfo}) {
               
                 {
                   menuItems.map( menuItem => menuItem.show ? 
-                    <Link href={menuItem.path} 
+                    <Link href={menuItem.path}  key={menuItem.label}
                       onClick={() => sessionStorage.removeItem("filterParams") }
                     className="flex w-full items-center py-2 text-lg font-semibold" >
                       {menuItem.label}
@@ -74,12 +74,12 @@ function Header({user, profileInfo}) {
         <Link className=" font-bold text-3xl hidden lg:flex mr-6 " href={'/'} > JOBSCO </Link>
 
 
-        <nav className="ml-auto hidden lg:flex gap-6" >
+        <div className="ml-auto hidden lg:flex gap-6" >
           <div>
           {
             menuItems.map(menuItem => menuItem.show ? (
               <Link 
-              href={menuItem.path} 
+              href={menuItem.path} key={menuItem?.label}
               className='group inline-flex h-9 w-max items-center rounded-md bg-white px-4 py-2 text-sm font-medium'>
                   {menuItem.label}
               </Link>
@@ -87,7 +87,7 @@ function Header({user, profileInfo}) {
           )}
           <UserButton afterSignOut='/' /> 
           </div>
-        </nav>
+        </div>
 
 
       </header>

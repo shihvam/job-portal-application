@@ -56,8 +56,9 @@ function PostNewJob({user, profileInfo, jobList}){
 
     console.log(jobFormData);
 
-    return jobFormData === undefined ? '' :  Object.keys(jobFormData).every(
-      (control) => jobFormData[control].trim() !== "" ) ;
+    jobFormData == undefined? '' :  Object.keys(jobFormData).every( control => jobFormData[control].trim() !== '' ) ;
+
+    
   }
 
   async function createNewJob(){
@@ -88,7 +89,7 @@ function PostNewJob({user, profileInfo, jobList}){
                 formData={jobFormData}
                 setFormData={setJobFormData}
                 formControls={postNewJobFormControls}
-                isBtnDisabled={!handlePostNewBtnValid()}
+                // isBtnDisabled={!handlePostNewBtnValid()}
                 action={createNewJob}
               />
             </div>
